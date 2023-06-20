@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Consulta Certificados</string>
+    <string name="desaprobado">Realize denuevo el tramite</string>
+</resources>
