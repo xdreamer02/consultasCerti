@@ -277,7 +277,7 @@
                 android:id="@+id/tvDatos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Visita Programada"
+                android:text="Inspeccion Programada"
                 android:textColor="@color/white"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -288,7 +288,6 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-edr
             <ImageView
                 android:id="@+id/iv6"
                 android:layout_width="match_parent"

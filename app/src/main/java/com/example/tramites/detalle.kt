@@ -33,7 +33,7 @@ class detalle : AppCompatActivity() {
 
         if(Certificado.riesgo.equals("Bajo") || Certificado.riesgo.equals("Medio")){
             //Comercializacion
-            binding.view1.setBackgroundColor(ContextCompat.getColor(this, R.color.rojo_claro));
+            binding.view1.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
 
             when(Certificado.Estadoexp){
                 "En trámite"->  {
@@ -47,11 +47,13 @@ class detalle : AppCompatActivity() {
                     binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
                     imageColor(binding.iv3, 1f)
 
+                    //Catastro
                     when(Certificado.Estadoinspeccion){
+                        "En revision" ->imageColor(binding.iv4, 1f)
                         "Programado"->  {
-                            imageColor(binding.iv4, 1f)
+                            imageColor(binding.iv5, 1f)
                             binding.tvDesaprobado.text = "Fecha: "+ Certificado.fechaInspecc +" - Inspector Asignado: " + Certificado.inspectorAsignado
-                            binding.tvDesaprobado.text = Certificado.fechaInspecc
+
                         }
                         "Aprobado"-> {
                             imageColor(binding.iv5, 1f)
@@ -85,6 +87,25 @@ class detalle : AppCompatActivity() {
                     imageColor(binding.iv6, 1f)
                     binding.iv5.setImageResource(R.drawable.cheque)
                     binding.tvDatos.text = Certificado.Estadoinspeccion
+
+                    binding.view1.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate))
+
+                    //Comercializacion
+                    when(Certificado.Estadoexp){
+                        "En trámite"->  {
+                            imageColor(binding.iv1, 1f)
+
+                        }
+                        "Con observaciones"->  {
+                            imageColor(binding.iv2, 1f)
+                        }
+                        "Finalizado"->  {
+                            binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
+                            imageColor(binding.iv3, 1f)
+
+                        }
+                    }
+
                 }
                 "Desaprobado"->  {
                     imageColor(binding.iv5, 1f)
