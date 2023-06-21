@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -73,9 +74,11 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:text="Bienvenido"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -86,6 +89,8 @@
         android:layout_marginTop="15dp"
         android:text="Nro de Expediente"
         android:textSize="16sp"
+        android:textColor="@color/white"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,6 +103,8 @@
         android:layout_marginTop="20dp"
         android:text="RUC"
         android:textSize="16sp"
+        android:textColor="@color/white"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"

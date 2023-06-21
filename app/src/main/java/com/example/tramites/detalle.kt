@@ -80,7 +80,7 @@ class detalle : AppCompatActivity() {
                 "Programado"->  {
                     imageColor(binding.iv5, 1f)
                     binding.tvDesaprobado.text = "Fecha: "+ Certificado.fechaInspecc +" Inspector Asignado: " + Certificado.inspectorAsignado
-                    binding.tvDatos.text = Certificado.Estadoinspeccion
+                    binding.tvDatos.text = "Inspecion Prograda"
                 }
                 "Aprobado"-> {
                     imageColor(binding.iv5, 1f)
@@ -110,8 +110,16 @@ class detalle : AppCompatActivity() {
                 "Desaprobado"->  {
                     imageColor(binding.iv5, 1f)
                     binding.iv5.setImageResource(R.drawable.cancelar)
+                    binding.tvDatos.text = "Desaprobado"
                     binding.tvDesaprobado.text = "Espere una reprogramacion de inspeccion"
                 }
+                "Con observaciones"->  {
+                    imageColor(binding.iv5, 1f)
+                    binding.iv5.setImageResource(R.drawable.observacion)
+                    binding.tvDatos.text = "Con Observaciones"
+                    binding.tvDesaprobado.text = "Tiene 2 semana para subsanar"
+                }
+
             }
 
         }
