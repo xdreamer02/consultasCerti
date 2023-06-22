@@ -8,4 +8,8 @@
     <color name="rojo">#FF0000</color>
     <color name="atecolor">#C1255B</color>
     <color name="azulate">#1F618D</color>
+    <color name="color1">#24744c  </color>
+    <color name="color2">#f4e4a2  </color>
+    <color name="color3">#d46c6c </color>
+    <color name="color4">#d41c38 </color>
 </resources>
