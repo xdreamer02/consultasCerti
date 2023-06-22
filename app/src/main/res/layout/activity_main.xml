@@ -59,6 +59,7 @@
             android:id="@+id/ruc"
             android:layout_width="280dp"
             android:layout_height="55dp"
+            android:textColor="@color/white"
             android:hint="Ingresar Nro de RUC"
             android:inputType="number"
             android:maxLength="11"
@@ -134,6 +135,7 @@
             android:layout_height="55dp"
             android:hint="Ingresar Nro de Expediente"
             android:inputType="phone"
+            android:textColor="@color/white"
             android:maxLength="9"
             android:maxLines="1"
             android:textColorHint="#BAB1B1" />
