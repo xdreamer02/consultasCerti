@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+        binding.btnInit.setOnClickListener {
+            val i = Intent(this,login::class.java)
+            startActivity(i)
+        }
     }
 
     private fun getData(exp:String,ruc:String){
@@ -56,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                         Certificado.correo = tramite?.correo ?: "No hay user"
                         Certificado.Estadoexp = tramite?.estadoexp ?: "No hay user"
                         Certificado.Estadoexp2 = tramite?.estadoexp2 ?: "No hay user"
+                        Certificado.dniInnspector = tramite?.dniInspector ?: "No data"
                         Certificado.inspectorAsignado = tramite?.inspectorAsig ?: "No data"
                         Certificado.Estadoinspeccion = tramite?.estadoInspecion ?: "No hay user"
                         if (Certificado.expediente.equals(exp) && Certificado.ruc.equals(ruc))
@@ -93,7 +99,7 @@ class MainActivity : AppCompatActivity() {
             .build()
     }
     private fun initActivity() {
-        val i = Intent(this,detalle::class.java)
+        val i = Intent(this,home::class.java)
         val passwordLayout: TextInputLayout = findViewById(R.id.textInputLayout2)
         passwordLayout.error = null
         val passwordLayout2: TextInputLayout = findViewById(R.id.textInputLayout3)

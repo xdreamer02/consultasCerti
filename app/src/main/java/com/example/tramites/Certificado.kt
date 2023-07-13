@@ -14,6 +14,7 @@ object Certificado {
     var inspectorAsignado:String? = null
     var  Estadoexp: String? = null
     var  Estadoexp2: String? = null
+    var dniInnspector: String? = null
     var Estadoinspeccion: String? = null
     var ErrorTramite:String?=null
 }

@@ -27,7 +27,7 @@ class detalle : AppCompatActivity() {
         binding = ActivityDetalleBinding.inflate(layoutInflater)
         setContentView(binding.root)
         tool = binding.topAppBar2
-        binding.tvRazon.text = Certificado.razonsocial
+
         binding.tvRiesgo.text = Certificado.riesgo
 
         tool.setNavigationOnClickListener(){finish()}
@@ -35,9 +35,7 @@ class detalle : AppCompatActivity() {
         imageColor(binding.iv1, 0f)
         imageColor(binding.iv2, 0f)
         imageColor(binding.iv3, 0f)
-        imageColor(binding.iv4, 0f)
-        imageColor(binding.iv5, 0f)
-        imageColor(binding.iv6, 0f)
+
 
         //color y % progressBar
         extracted(Certificado.riesgo!!)
@@ -46,6 +44,7 @@ class detalle : AppCompatActivity() {
 
         if(Certificado.riesgo.equals("Bajo") || Certificado.riesgo.equals("Medio")){
             binding.fabMain.isVisible = false
+            binding.cv15.isVisible = false
             //Comercializacion
             binding.view1.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
 
@@ -57,14 +56,15 @@ class detalle : AppCompatActivity() {
                 "Con observaciones"->  {
                     imageColor(binding.iv2, 1f)
                     binding.fabMain.isVisible = true
+                    binding.cv15.isVisible = true
                     //Agrear numero
                     binding.fabMain.setOnClickListener { chatObs("+51912307990") }
-                    binding.tvDesaprobado.text = "Tiene 2 semana para subsanar"
+                    binding.tvDesaprobado.text = getString(R.string.obsLicencia)
                 }
                 "Finalizado"->  {
-                    binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
+                    //binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
                     imageColor(binding.iv3, 1f)
-
+/*
                     //Catastro
                     when(Certificado.Estadoinspeccion){
                         "En revision" ->imageColor(binding.iv4, 1f)
@@ -89,13 +89,13 @@ class detalle : AppCompatActivity() {
                             imageColor(binding.iv5, 1f)
                             binding.iv5.setImageResource(R.drawable.observacion)
                             binding.tvDatos.text = "Con Observaciones"
-                            binding.tvDesaprobado.text = "Tiene 2 semana para subsanar"
+                            binding.tvDesaprobado.text = getString(R.string.obsLicencia)
                             binding.fabMain.isVisible = true
                             //Agrear numero
                             binding.fabMain.setOnClickListener { chatObs("+51912307990") }
 
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -103,9 +103,9 @@ class detalle : AppCompatActivity() {
 
         }else {
             binding.fabMain.isVisible = false
-            binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
+            //binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
             //Catastro
-            when(Certificado.Estadoinspeccion){
+           /* when(Certificado.Estadoinspeccion){
                 "En revision" ->imageColor(binding.iv4, 1f)
                 "Programado"->  {
                     imageColor(binding.iv5, 1f)
@@ -158,7 +158,7 @@ class detalle : AppCompatActivity() {
 
                 }
 
-            }
+            }*/
 
         }
     }

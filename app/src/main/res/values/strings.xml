@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Consulta Certificados</string>
     <string name="desaprobado">Realize denuevo el tramite</string>
+    <string name="comercio">Licencia de Funcionamiento</string>
+    <string name="desastre">ITSE</string>
+
+    <string name="btn1">Calidad de Prestacion de Servicios</string>
+    <string name="btn2">Satisfaccion de Usuarios</string>
+    <string name="obsLicencia">Se encontraron observaciones en su documentación presentada, comunicarse mediante el botón de WhatsApp para mayores detalles.</string>
+    <!--Requisto activity-->
+    <string name="requisitos">Requisitos y Formatos</string>
+    <string name="req1">Formato de Licencia de Funcionamiento D.D: 046-2017-PCM</string>
+    <string name="req2">Declaración Jurada para informar el desarrollo de actividades simultaneas y adicionales a la licencia de funcionamiento.</string>
+    <string name="req3">Sección del TUPA referida a la Licencia de Funcionamiento</string>
+    <string name="req4">Plano de Zonificación de Ate – Actualizado 2019</string>
+    <string name="req5">Declaración Jurada para informar cambio de giro</string>
 </resources>
