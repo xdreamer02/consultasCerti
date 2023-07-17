@@ -41,7 +41,7 @@ class insert : AppCompatActivity() {
         val state = checkInter()
         if(state.checkForInternet(this)){
             val obten = getRetrofit().create(apiService::class.java).addCertificado(data)
-                obten.enqueue(
+            obten.enqueue(
                     object : Callback<DatoDTO>{
                         override fun onResponse(call: Call<DatoDTO>, response: Response<DatoDTO>) {
                             val res = response.body()

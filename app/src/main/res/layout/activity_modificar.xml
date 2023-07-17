@@ -52,6 +52,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie10"
+                    android:inputType="phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="NRO DE EXPEDIENTE" />
@@ -68,9 +69,12 @@
                 android:layout_height="match_parent">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie12"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:cursorVisible="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="RUC	" />
+                    android:hint="RUC" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -195,7 +199,7 @@
             <Button
                 android:layout_marginTop="10dp"
 
-                android:id="@+id/btnInsertData"
+                android:id="@+id/btnUpdateData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
