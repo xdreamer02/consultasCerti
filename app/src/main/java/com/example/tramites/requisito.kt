@@ -23,8 +23,12 @@ class requisito : AppCompatActivity() {
              url = "https://saponsapaso159.000webhostapp.com/wp-content/uploads/2023/07/FORMATO-LICENCIA-DE-FUNCIONAMIENTO.pdf"
             activateURL(url)
         }
-        binding.iv23.setOnClickListener {
+        binding.iv21.setOnClickListener{
             url = "https://saponsapaso159.000webhostapp.com/wp-content/uploads/2023/07/Declaracion-Jurada-para-informar-el-desarrollo-de-actividades-simultaneas-y-adicionales-a-la-licencia-de-funcionamiento.pdf"
+            activateURL(url)
+        }
+        binding.iv23.setOnClickListener {
+            url = ""
             activateURL(url)
         }
         binding.iv24.setOnClickListener {

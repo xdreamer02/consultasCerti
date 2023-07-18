@@ -47,13 +47,14 @@
                 app:endIconTint="@color/white"
                 android:id="@+id/til70"
                 android:layout_width="match_parent"
-
+                app:hintTextColor="@color/gray"
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie10"
                     android:inputType="phone"
                     android:layout_width="match_parent"
+                    android:textColor="@color/white"
                     android:layout_height="wrap_content"
                     android:hint="NRO DE EXPEDIENTE" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -68,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie12"
                     android:focusable="false"
                     android:clickable="false"
@@ -89,6 +91,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -106,6 +109,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,6 +127,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -140,6 +145,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -157,6 +163,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -174,6 +181,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -191,6 +199,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/white"
                     android:id="@+id/tie19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

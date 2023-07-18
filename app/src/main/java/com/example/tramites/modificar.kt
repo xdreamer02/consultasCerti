@@ -32,7 +32,19 @@ class modificar : AppCompatActivity() {
         }
 
         binding.btnUpdateData.setOnClickListener {
-            //update btn
+            val bodyDatos = resDTO(
+                binding.tie10.text.toString(),
+                binding.tie12.text.toString(),
+                binding.tie13.text.toString(),
+                binding.tie14.text.toString(),
+                binding.tie15.text.toString(),
+                binding.tie16.text.toString(),
+                binding.tie17.text.toString(),
+                binding.tie18.text.toString(),
+                binding.tie19.text.toString(),
+            )
+
+            updateData(bodyDatos)
             
         }
     }
@@ -50,11 +62,11 @@ class modificar : AppCompatActivity() {
                         binding.tie12.setText(datass?.rucc ?: "No Data")
                         binding.tie13.setText(datass?.razsociall ?: "No Data")
                         binding.tie14.setText(datass?.fecNacc ?: "No Data")
-                        binding.tie15.setText(datass?.fecNacc ?: "No Data")
-                        binding.tie16.setText(datass?.fecNacc ?: "No Data")
-                        binding.tie17.setText(datass?.fecNacc ?: "No Data")
-                        binding.tie18.setText(datass?.fecNacc ?: "No Data")
-                        binding.tie19.setText(datass?.fecNacc ?: "No Data")
+                        binding.tie15.setText(datass?.direccionn ?: "No Data")
+                        binding.tie16.setText(datass?.distritoo ?: "No Data")
+                        binding.tie17.setText(datass?.telefonoo ?: "No Data")
+                        binding.tie18.setText(datass?.emaill ?: "No Data")
+                        binding.tie19.setText(datass?.riesgoo ?: "No Data")
 
                     }else{
                         showMsg("No existe el certificado")
@@ -95,7 +107,7 @@ class modificar : AppCompatActivity() {
     //url update
     private fun getRetrofit2():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://script.google.com/macros/s/AKfycbymvvynYB7Qhemqf9dpq1I6hZKCA7iHLLDdQWW0xxbLzdfqypfH1tQl_G0-nT9EQZ-e/exec")
+            .baseUrl("https://script.google.com/macros/s/AKfycbymvvynYB7Qhemqf9dpq1I6hZKCA7iHLLDdQWW0xxbLzdfqypfH1tQl_G0-nT9EQZ-e/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
