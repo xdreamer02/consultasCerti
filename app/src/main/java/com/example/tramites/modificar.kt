@@ -24,6 +24,9 @@ class modificar : AppCompatActivity() {
         binding = ActivityModificarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        toolb = binding.topAppBar6
+        toolb.setNavigationOnClickListener { finish() }
+
         binding.til70.setEndIconOnClickListener {
             searchCertificado(binding.tie10.text.toString())
         }
