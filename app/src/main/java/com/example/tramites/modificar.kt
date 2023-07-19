@@ -100,14 +100,14 @@ class modificar : AppCompatActivity() {
     //get link getbyid
     private fun getRetrofit():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://script.google.com/macros/s/AKfycbx98ditGr6B7W3KJjcwqADNoP6oInz38ld6Cbn1MqYVxRSzzSFkZjDMl0Z-orzmME-Y/")
+            .baseUrl("https://script.google.com/macros/s/AKfycbzjWQwPcdSV2uGDoEH-UE3ZWc6vxD43R0cSGt258RmfhbjR6ui_kyWPDpDjrh6qIhG7/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
     //url update
     private fun getRetrofit2():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://script.google.com/macros/s/AKfycbymvvynYB7Qhemqf9dpq1I6hZKCA7iHLLDdQWW0xxbLzdfqypfH1tQl_G0-nT9EQZ-e/")
+            .baseUrl("https://script.google.com/macros/s/AKfycbzlyClQG7-lzPL0a1G1LNiMUCck15AHCHHNAhsrlJ-lC7WtvUZm005-IxrBdAi7CKV1/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

@@ -7,11 +7,12 @@ import android.graphics.ColorMatrixColorFilter
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.example.tramites.databinding.ActivityDetalleBinding
 import com.example.tramites.databinding.ActivityRiesgoBinding
 
 class riesgo : AppCompatActivity() {
@@ -35,9 +36,11 @@ class riesgo : AppCompatActivity() {
         //color y % progressBar
         extracted(Certificado.riesgo!!)
         binding.cv18.isVisible = false
+        binding.btnFlotante1.isVisible = false
         //binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
         //Catastro
         when(Certificado.Estadoinspeccion){
+
 
              "En revision" ->imageColor(binding.iv4, 1f)
              "Programado"->  {
@@ -60,14 +63,15 @@ class riesgo : AppCompatActivity() {
                  binding.tvDesaprobado.text = "Espere una reprogramacion de inspeccion"
              }
              "Con observaciones"->  {
+                 binding.btnFlotante1.setOnClickListener {chatObs("+51969509757") }
                  imageColor(binding.iv5, 1f)
                  binding.iv5.setImageResource(R.drawable.observacion)
                  binding.tvDatos.text = "Con Observaciones"
                  binding.tvDesaprobado.text = "Tiene 2 semana para subsanar"
-                 binding.fabMain1.isVisible = true
+                 binding.btnFlotante1.isVisible = true
                  binding.cv18.isVisible = true
                  //Agrear numero
-                 binding.fabMain1.setOnClickListener { chatObs("+51912307990") }
+
 
              }
 
@@ -95,6 +99,10 @@ class riesgo : AppCompatActivity() {
         } catch (e: PackageManager.NameNotFoundException) {
             this.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         }
+    }
+
+    private fun showMessage(msj:String){
+        Toast.makeText(this,msj,Toast.LENGTH_SHORT).show()
     }
     private fun extracted(estadoR:String) {
         binding.pbColores.progress = 100

@@ -91,9 +91,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-                //v8 https://script.google.com/macros/s/AKfycbw2VvjxTUqlMcU6_FQUGmxQdSPXsYYG-EfDzKx5IqD00BoZ6v75XOelpkPEx1Nbqthb/
-                // v9 https://script.google.com/macros/s/AKfycbxJq-H79kCtBThnuqAA8ZWxCDJuSQ93j_iIn5Iff0cmfPKt_N4PrDOEUvg7WhEBtzcy/exec
-            .baseUrl("https://script.google.com/macros/s/AKfycbxJq-H79kCtBThnuqAA8ZWxCDJuSQ93j_iIn5Iff0cmfPKt_N4PrDOEUvg7WhEBtzcy/")
+            .baseUrl("https://script.google.com/macros/s/AKfycbwUujyVgophv7HpRuEQNvd9CMWgbn-c2VNwiRJHl_Q8NEKjjxzWyy3RbYCyRNeJLoy-/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

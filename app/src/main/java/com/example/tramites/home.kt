@@ -27,17 +27,16 @@ class home : AppCompatActivity() {
 
     private fun cardViewSelect() {
         binding.cv1.setOnClickListener {
-            showToast("Licencia")
+
             val a = Intent(this,detalle::class.java)
             startActivity(a)
         }
         binding.cv2.setOnClickListener {
-            showToast("Desastre")
+
             val b = Intent(this,riesgo::class.java)
             startActivity(b)
         }
         binding.cv3.setOnClickListener {
-            showToast("Requerimientos")
             val a = Intent(this,requisito::class.java)
             startActivity(a)
         }

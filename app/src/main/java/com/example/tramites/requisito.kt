@@ -28,7 +28,7 @@ class requisito : AppCompatActivity() {
             activateURL(url)
         }
         binding.iv23.setOnClickListener {
-            url = ""
+            url = "https://saponsapaso159.000webhostapp.com/wp-content/uploads/2023/07/tupa_licencia_funcionamiento.pdf"
             activateURL(url)
         }
         binding.iv24.setOnClickListener {
