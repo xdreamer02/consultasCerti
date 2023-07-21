@@ -74,7 +74,31 @@ class detalle : AppCompatActivity() {
             binding.fabMain.isVisible = false
             binding.cv15.isVisible = false
 
+            if(Certificado.Estadoexp2 == "Finalizado" && Certificado.Estadoinspeccion =="Aprobado"){
+                binding.view1.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
 
+                when(Certificado.Estadoexp){
+                    "En trámite"->  {
+                        imageColor(binding.iv1, 1f)
+
+                    }
+                    "Con observaciones"->  {
+                        imageColor(binding.iv2, 1f)
+                        binding.fabMain.isVisible = true
+                        binding.cv15.isVisible = true
+                        //Agrear numero
+                        binding.fabMain.setOnClickListener { chatObs("+51912307990") }
+                        binding.tvDesaprobado.text = getString(R.string.obsLicencia)
+                    }
+                    "Finalizado"->  {
+                        //binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
+                        imageColor(binding.iv3, 1f)
+                        binding.cv15.isVisible = true
+
+                        binding.tvDesaprobado.text ="LA LICENCIA DE FUNCIONAMIENTO YA SE ENCUENTRA EMITIDA, ACERCARSE A LA MUNICIPALIDAD PARA SU RECOJO"
+                    }
+                }
+            }
         }
     }
 

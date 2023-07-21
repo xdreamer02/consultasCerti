@@ -2,11 +2,15 @@ package com.example.tramites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.tramites.databinding.ActivityModificarBinding
 import com.example.tramites.model.DatoDTO
 import com.example.tramites.model.resDTO
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,6 +23,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class modificar : AppCompatActivity() {
     private lateinit var binding: ActivityModificarBinding
     private lateinit var toolb : Toolbar
+    private lateinit var autoTexto11: AutoCompleteTextView
+    private lateinit var  itemSelc11:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityModificarBinding.inflate(layoutInflater)
@@ -31,7 +37,23 @@ class modificar : AppCompatActivity() {
             searchCertificado(binding.tie10.text.toString())
         }
 
+        val items = arrayOf("Bajo", "Medio", "Alto", "Muy alto")
+        autoTexto11 = binding.autoTexto11
+        val adaptador = ArrayAdapter(this,R.layout.list_item,items)
+        autoTexto11.setAdapter(adaptador)
+        autoTexto11.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
+            itemSelc11 = adapterView.getItemAtPosition(i).toString()
+            //showToast(itemSelc)
+
+
+        }
+
+        (binding.tilLista11.editText as? MaterialAutoCompleteTextView)?.setSimpleItems(items)
+
+
+
         binding.btnUpdateData.setOnClickListener {
+
             val bodyDatos = resDTO(
                 binding.tie10.text.toString(),
                 binding.tie12.text.toString(),
@@ -41,7 +63,7 @@ class modificar : AppCompatActivity() {
                 binding.tie16.text.toString(),
                 binding.tie17.text.toString(),
                 binding.tie18.text.toString(),
-                binding.tie19.text.toString(),
+                itemSelc11
             )
 
             updateData(bodyDatos)
@@ -66,7 +88,7 @@ class modificar : AppCompatActivity() {
                         binding.tie16.setText(datass?.distritoo ?: "No Data")
                         binding.tie17.setText(datass?.telefonoo ?: "No Data")
                         binding.tie18.setText(datass?.emaill ?: "No Data")
-                        binding.tie19.setText(datass?.riesgoo ?: "No Data")
+                        binding.autoTexto11.setText(datass?.riesgoo ?: "No Data")
 
                     }else{
                         showMsg("No existe el certificado",2000)

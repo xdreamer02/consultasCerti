@@ -61,7 +61,7 @@ class insert : AppCompatActivity() {
                     binding.tie16.text.toString(),
                     binding.tie17.text.toString(),
                     binding.tie18.text.toString(),
-                    itemSelc,
+                    itemSelc
                 )
                 addCertificado(datosGUI)
             }
