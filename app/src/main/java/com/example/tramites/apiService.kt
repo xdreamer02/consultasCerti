@@ -3,6 +3,8 @@ package com.example.tramites
 import com.example.tramites.model.BodyDTO
 import com.example.tramites.model.DatoDTO
 import com.example.tramites.model.resDTO
+import com.example.tramites.model.responseFecha
+import com.example.tramites.model.responseTest
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -18,6 +20,12 @@ interface apiService {
     //getbyID
     @GET
     suspend fun getbyId(@Url link:String):Response<resDTO>
+    //getbyFecha calidad
+    @GET
+    suspend fun getbyFecha(@Url link:String):Response<responseFecha>
+    //getbyFecha satisfaccion
+    @GET
+    suspend fun getbySatifaccion(@Url link:String):Response<responseTest>
 
     //agregar nuevo certificado
     @POST("exec")

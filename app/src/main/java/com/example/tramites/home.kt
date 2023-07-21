@@ -23,6 +23,16 @@ class home : AppCompatActivity() {
         binding.tvRazon.text = Certificado.razonsocial
         cardViewSelect()
 
+        binding.btnCalidad.setOnClickListener {
+            val a = Intent(this,fechaTabla::class.java)
+            startActivity(a)
+        }
+
+        binding.btnSatisfaccion.setOnClickListener {
+            val z = Intent(this,fechaTest::class.java)
+            startActivity(z)
+        }
+
     }
 
     private fun cardViewSelect() {

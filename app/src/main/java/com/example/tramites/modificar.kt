@@ -50,7 +50,7 @@ class modificar : AppCompatActivity() {
     }
 
     private fun searchCertificado(id:String){
-        val link = "exec?spreadsheetId=1VZpNYJHxCU0CZO_PE0NS7r9AnSrmfGWSpbLvQ92D1Ic&sheet=Hoja2&expediente=$id"
+        val link = "exec?spreadsheetId=1VZpNYJHxCU0CZO_PE0NS7r9AnSrmfGWSpbLvQ92D1Ic&sheet=Hoja1&expediente=$id"
         val status = checkInter()
         if(status.checkForInternet(this)){
             CoroutineScope(Dispatchers.IO).launch {
@@ -69,7 +69,7 @@ class modificar : AppCompatActivity() {
                         binding.tie19.setText(datass?.riesgoo ?: "No Data")
 
                     }else{
-                        showMsg("No existe el certificado")
+                        showMsg("No existe el certificado",2000)
                     }
                 }
             }
@@ -85,11 +85,12 @@ class modificar : AppCompatActivity() {
                 object :Callback<DatoDTO>{
                     override fun onResponse(call: Call<DatoDTO>, response: Response<DatoDTO>) {
                        val resp = response.body()
-                        showMsg("${resp?.mensaje}")
+                        showMsg("${resp?.mensaje}",4000)
+                        finish()
                     }
 
                     override fun onFailure(call: Call<DatoDTO>, t: Throwable) {
-                        showMsg("Error update Certificado")
+                        showMsg("Error-Actualizando-Certificado",2000)
                     }
 
                 }
@@ -100,20 +101,20 @@ class modificar : AppCompatActivity() {
     //get link getbyid
     private fun getRetrofit():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://script.google.com/macros/s/AKfycbzjWQwPcdSV2uGDoEH-UE3ZWc6vxD43R0cSGt258RmfhbjR6ui_kyWPDpDjrh6qIhG7/")
+            .baseUrl("https://script.google.com/macros/s/AKfycbx1iEsHNCSV6dOfH8_rgGHPoz7CHztXWZjn4TGAYp2EN1A_-mgD-7CBFSHZzybd7EBM/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
     //url update
     private fun getRetrofit2():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://script.google.com/macros/s/AKfycbzlyClQG7-lzPL0a1G1LNiMUCck15AHCHHNAhsrlJ-lC7WtvUZm005-IxrBdAi7CKV1/")
+            .baseUrl("https://script.google.com/macros/s/AKfycbxGFitf9onsu0cMNBKBs0--Us1iYZOsIj_q87H4xaDT6SsaUwL3noAi9f2rMDQ5wdYp/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 
-    private fun showMsg(msg:String){
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+    private fun showMsg(msg:String,duration:Int){
+        Toast.makeText(this,msg,duration).show()
     }
 
 }

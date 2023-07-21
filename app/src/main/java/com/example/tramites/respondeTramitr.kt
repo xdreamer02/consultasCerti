@@ -18,6 +18,5 @@ data class respondeTramitr(
     @SerializedName("FECHA DE INSPECCIÓN") val fecInspecion: String? = null,
     @SerializedName("INSPECTOR ASIGNADO") val inspectorAsig: String? = null,
     @SerializedName("DNI DE INSPECTOR") val dniInspector: String? = null,
-    @SerializedName("ESTADO DE INSPECCIÓN") val estadoInspecion: String? = null,
-
+    @SerializedName("ESTADO DE INSPECCIÓN") val estadoInspecion: String? = null
 )

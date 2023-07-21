@@ -35,47 +35,59 @@ class riesgo : AppCompatActivity() {
         imageColor(binding.iv6, 0f)
         //color y % progressBar
         extracted(Certificado.riesgo!!)
-        binding.cv18.isVisible = false
-        binding.btnFlotante1.isVisible = false
+
         //binding.view2.setBackgroundColor(ContextCompat.getColor(this, R.color.azulate));
         //Catastro
-        when(Certificado.Estadoinspeccion){
+        if(Certificado.riesgo.equals("Alto") || Certificado.riesgo.equals("Muy alto")){
+            binding.cv18.isVisible = false
+            binding.btnFlotante1.isVisible = false
+            when(Certificado.Estadoinspeccion){
+                "En revision" ->imageColor(binding.iv4, 1f)
+                "Programado"->  {
+                    imageColor(binding.iv5, 1f)
+                    binding.cv18.isVisible = true
+                    binding.tvDesaprobado.text = "Fecha: "+ Certificado.fechaInspecc +"\nInspector Asignado: " + Certificado.inspectorAsignado+"\nDni Inspector: " + Certificado.dniInnspector
+                    binding.tvDatos.text = "Inspección Programada"
+                }
+                "Aprobado"-> {
+                    imageColor(binding.iv5, 1f)
+                    imageColor(binding.iv6, 1f)
+                    binding.iv5.setImageResource(R.drawable.cheque)
+                    binding.tvDatos.text = Certificado.Estadoinspeccion
+
+                    if(Certificado.Estadoexp2 == "Finalizado"){
+                        imageColor(binding.iv6, 1f)
+                        binding.cv18.isVisible = true
+                        binding.tvDesaprobado.text =" EL CERTIFICADO DE INSPECCIÓN TECNICA DE EDIFICICACIÓN SE ENCUENTRA EMITIDO, ACERCARSE A LA MUNICIPALIDAD PARA SU RECOJO"
+                    }
+                }
+                "Desaprobado"->  {
+                    imageColor(binding.iv5, 1f)
+                    binding.iv5.setImageResource(R.drawable.cancelar)
+                    binding.tvDatos.text = "Desaprobado"
+                    binding.tvDesaprobado.text = "Espere una reprogramacion de inspeccion"
+                    binding.cv18.isVisible = true
+                    if(Certificado.Estadoexp2 == "Finalizado"){
+                        imageColor(binding.iv6, 1f)
+                    }
+                }
+                "Con observaciones"->  {
+                    binding.btnFlotante1.setOnClickListener {chatObs("+51969509757") }
+                    imageColor(binding.iv5, 1f)
+                    binding.iv5.setImageResource(R.drawable.observacion)
+                    binding.tvDatos.text = "Con Observaciones"
+                    binding.tvDesaprobado.text = "Tiene 2 semana para subsanar"
+                    binding.btnFlotante1.isVisible = true
+                    binding.cv18.isVisible = true
 
 
-             "En revision" ->imageColor(binding.iv4, 1f)
-             "Programado"->  {
-                 imageColor(binding.iv5, 1f)
-                 binding.cv18.isVisible = true
-                 binding.tvDesaprobado.text = "Fecha: "+ Certificado.fechaInspecc +"\nInspector Asignado: " + Certificado.inspectorAsignado+"\nDni Inspector: " + Certificado.dniInnspector
-                 binding.tvDatos.text = "Inspección Programada"
-             }
-             "Aprobado"-> {
-                 imageColor(binding.iv5, 1f)
-                 imageColor(binding.iv6, 1f)
-                 binding.iv5.setImageResource(R.drawable.cheque)
-                 binding.tvDatos.text = Certificado.Estadoinspeccion
+                }
 
-             }
-             "Desaprobado"->  {
-                 imageColor(binding.iv5, 1f)
-                 binding.iv5.setImageResource(R.drawable.cancelar)
-                 binding.tvDatos.text = "Desaprobado"
-                 binding.tvDesaprobado.text = "Espere una reprogramacion de inspeccion"
-             }
-             "Con observaciones"->  {
-                 binding.btnFlotante1.setOnClickListener {chatObs("+51969509757") }
-                 imageColor(binding.iv5, 1f)
-                 binding.iv5.setImageResource(R.drawable.observacion)
-                 binding.tvDatos.text = "Con Observaciones"
-                 binding.tvDesaprobado.text = "Tiene 2 semana para subsanar"
-                 binding.btnFlotante1.isVisible = true
-                 binding.cv18.isVisible = true
-                 //Agrear numero
-
-
-             }
-
-         }
+            }
+        }else{
+            binding.cv18.isVisible = false
+            binding.btnFlotante1.isVisible = false
+        }
     }
 
     private fun imageColor(img: ImageView, saturation:Float){

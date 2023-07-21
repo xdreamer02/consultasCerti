@@ -16,6 +16,12 @@
         android:theme="@style/Theme.Tramites"
         tools:targetApi="31">
         <activity
+            android:name=".fechaTest"
+            android:exported="false" />
+        <activity
+            android:name=".fechaTabla"
+            android:exported="false" />
+        <activity
             android:name=".modificar"
             android:exported="false" />
         <activity

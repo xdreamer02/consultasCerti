@@ -2,7 +2,7 @@
     <string name="app_name">Consulta Certificados</string>
     <string name="desaprobado">Realize denuevo el tramite</string>
     <string name="comercio">Licencia de Funcionamiento</string>
-    <string name="desastre">ITSE</string>
+    <string name="desastre">Inspecciones Técnicas de Seguridad en Edificaciones (ITSE)</string>
 
     <string name="btn1">Calidad de Prestacion de Servicios</string>
     <string name="btn2">Satisfaccion de Usuarios</string>

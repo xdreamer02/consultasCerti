@@ -44,11 +44,11 @@
 
             android:id="@+id/til50"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie10"
+                android:inputType="phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="NRO DE EXPEDIENTE" />
@@ -58,13 +58,16 @@
              app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
+
+            app:boxCornerRadiusTopStart="20dp"
         android:layout_marginTop="10dp"
             android:id="@+id/til52"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie12"
+                android:maxLength="11"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="RUC	" />
@@ -152,6 +155,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie17"
                 android:layout_width="match_parent"
+                android:maxLength="9"
                 android:layout_height="wrap_content"
                 android:hint="TELÉFONO" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -168,33 +172,41 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie18"
+                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="E-MAIL" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-             app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-            android:layout_marginTop="10dp"
-
-            android:id="@+id/til59"
+        android:id="@+id/tilLista"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="RIESGO" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <Button
             android:layout_marginTop="10dp"
+            app:counterTextColor="@color/white"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            android:layout_height="wrap_content">
 
+        <AutoCompleteTextView
+            android:id="@+id/autoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:inputType="text"
+android:text="Riego:"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp"
             android:id="@+id/btnInsertData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:layout_weight="1"
             android:backgroundTint="@color/azulate"
             android:text="Insertar"
